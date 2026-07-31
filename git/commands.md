@@ -190,11 +190,11 @@ git checkout -b [branchname]
 ## Перебазирование (Rebase)
 
 ```bash
-git cherry -v branch_name
+git cherry -v <branch_name>
 ```
 
 ```bash
-git cherry -v branch_name | wc -l
+git cherry -v <branch_name> | wc -l
 ```
 
 ```bash
