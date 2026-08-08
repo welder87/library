@@ -1,5 +1,18 @@
 # Helix Cases
 
+# Автоформатирование
+
+Таблица на момент версии helix 25.07.1
+
+https://github.com/helix-editor/helix/pull/15458
+
+| config.toml | languages.toml | format |
+| ----------- | -------------- | ------ |
+| true        | true           | true   |
+| true        | false          | false  |
+| false       | true           | false  |
+| false       | false          | false  |
+
 ## Markdown в Helix
 
 1. Проверить, что грамматика есть
