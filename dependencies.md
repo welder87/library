@@ -87,9 +87,26 @@ zellij setup --dump-config > ~/.config/zellij/config.kdl
 
 - [Docs](https://yazi-rs.github.io)
 - [Src](https://github.com/sxyazi/yazi)
+- [Nerd Fonts](https://www.nerdfonts.com)
 
 ```bash
 sudo snap install yazi --classic
+```
+
+Установка шрифтов.
+
+```bash
+curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz
+mkdir -p ~/.local/share/fonts
+tar -xf JetBrainsMono.tar.xz -C ~/.local/share/fonts
+fc-cache -f -v
+```
+
+```bash
+# for JSON preview
+sudo apt-get install jq
+# for video thumbnails
+sudo apt install ffmpeg
 ```
 
 ### bat
@@ -120,7 +137,7 @@ sudo snap install glow
 sudo dpkg -i file.deb
 ```
 
-###
+### 
 
 ### mergiraf
 
