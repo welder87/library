@@ -143,6 +143,18 @@ sudo dpkg -i file.deb
 
 ### dprint
 
+# usql
+
+- [Docs](https://github.com/xo/usql)
+- [Src](https://github.com/xo/usql)
+
+```bash
+https://github.com/xo/usql/releases/download/v0.21.4/usql-0.21.4-linux-amd64.tar.bz2
+tar -xjf usql-0.21.4-linux-amd64.tar.bz2 -C /tmp
+sudo mv /tmp/usql /usr/local/bin/
+usql --version
+```
+
 ## lsp
 
 ### sql
