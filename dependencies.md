@@ -157,6 +157,32 @@ usql --version
 
 ## lsp
 
+### codebook
+
+- [Src](https://github.com/blopker/codebook)
+- [Docs](https://github.com/blopker/codebook)
+
+```bash
+cd /tmp
+wget https://github.com/blopker/codebook/releases/download/v0.3.43/codebook-lsp-x86_64-unknown-linux-musl.tar.gz
+
+tar -xvf codebook-lsp-x86_64-unknown-linux-musl.tar.gz
+mkdir -p ~/.local/bin
+mv codebook-lsp ~/.local/bin/
+chmod +x ~/.local/bin/codebook-lsp
+
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+
+codebook-lsp --version
+```
+
+Файл глобальной конфигурации.
+
+```bash
+~/.config/codebook/codebook.toml
+```
+
 ### sql
 
 postgres-language-server https://pg-language-server.com/latest/
