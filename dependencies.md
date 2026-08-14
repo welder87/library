@@ -35,6 +35,32 @@ hx ~/.config/helix/config.toml
 hx ~/.config/helix/languages.toml
 ```
 
+Проверить, что грамматика есть
+
+```bash
+hx --health markdown
+```
+
+Покажет статус языка: дерево грамматики, LSP, форматтер. Если грамматики нет:
+
+```bash
+hx -g fetch   # скачать tree-sitter грамматики
+hx -g build   # скомпилировать
+```
+
+#### Автоформатирование
+
+Таблица на момент версии helix 25.07.1
+
+https://github.com/helix-editor/helix/pull/15458
+
+| config.toml | languages.toml | format |
+| ----------- | -------------- | ------ |
+| true        | true           | true   |
+| true        | false          | false  |
+| false       | true           | false  |
+| false       | false          | false  |
+
 ### keyd
 
 - [Src](https://github.com/rvaiya/keyd)
@@ -143,7 +169,9 @@ sudo dpkg -i file.deb
 
 ### dprint
 
-# usql
+- [Docs](https://dprint.dev/)
+
+### usql
 
 - [Docs](https://github.com/xo/usql)
 - [Src](https://github.com/xo/usql)
@@ -195,4 +223,31 @@ https://github.com/nametake/golangci-lint-langserver
 
 ### markdown
 
+#### mpls
+
+- [Src](https://github.com/mhersson/mpls)
+- [Docs](https://github.com/mhersson/mpls)
+
+```bash
+cd /tmp
+https://github.com/mhersson/mpls/releases/download/v0.22.0/mpls_0.22.0_linux_amd64.tar.gz
+tar -xzf mpls_0.22.0_linux_amd64.tar.gz
+cp mpls ~/.local/bin/
+chmod +x ~/.local/bin/mpls
+
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc                            
+source ~/.bashrc
+mpls --version
+```
+
+#### markdown-oxide
+
 https://oxide.md/ https://github.com/Feel-ix-343/markdown-oxide
+
+#### marksman
+
+```bash
+# Marksman
+wget https://github.com/artempyanykh/marksman/releases/latest/download/marksman-linux-x64 -O ~/.local/bin/marksman
+chmod +x ~/.local/bin/marksman
+```
