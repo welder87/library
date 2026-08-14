@@ -1,81 +1,5 @@
 # Helix Cases
 
-# Автоформатирование
-
-Таблица на момент версии helix 25.07.1
-
-https://github.com/helix-editor/helix/pull/15458
-
-| config.toml | languages.toml | format |
-| ----------- | -------------- | ------ |
-| true        | true           | true   |
-| true        | false          | false  |
-| false       | true           | false  |
-| false       | false          | false  |
-
-## Markdown в Helix
-
-1. Проверить, что грамматика есть
-
-```bash
-hx --health markdown
-```
-
-Покажет статус языка: дерево грамматики, LSP, форматтер. Если грамматики нет:
-
-```bash
-hx -g fetch   # скачать tree-sitter грамматики
-hx -g build   # скомпилировать
-```
-
-2. Language Server
-
-```bash
-# Marksman
-wget https://github.com/artempyanykh/marksman/releases/latest/download/marksman-linux-x64 -O ~/.local/bin/marksman
-chmod +x ~/.local/bin/marksman
-```
-
-~/.config/helix/languages.toml
-
-```toml
-[language-server.marksman]
-command = "marksman"
-
-[[language]]
-name = "markdown"
-language-servers = ["marksman"]
-soft-wrap = { enable = true, max-wrap = 25, wrap-indicator = "" }
-```
-
-Другой вариант — markdown-oxide
-
-3. Форматирование (dprint)
-
-https://dprint.dev/
-
-~/.config/helix/languages.toml
-
-```toml
-[[language]]
-name = "markdown"
-formatter = { command = "dprint", args = ["fmt", "--stdin", "md", "--config", "~/.config/dprint.json"] }
-```
-
-4. Preview (предпросмотр рендеринга)
-
-Helix сам Markdown не рендерит — нужен внешний viewer. Варианты:
-
-glow — рендерит Markdown в терминале.
-
-```bash
-sudo snap install glow
-```
-
-```text
-:sh glow %
-```
-
 ## Case 1. Мультикурсор. Одно слово встречается несколько раз - заменить все
 
 | Клавиша     | Действие                                                  |
@@ -132,3 +56,17 @@ foo,bar baz.qux hello-world
 1. Поставить курсор в начало нужного отрезка (просто `e`/`w` перемещением)
 2. `v` — войти в `select mode`: теперь `w`/`e`/`b` расширяют выделение
 3. Нажимать `w`/`e`/`b` — будет выделять по словам.
+
+## Case 5
+
+Переход к определению.
+
+- `gd` - Перейти к определению (Go to Definition).
+- `gD` - Перейти к объявлению (Go to Declaration)
+- `gy` - Перейти к определению типа (Go to Type Definition)
+- `gi` - Перейти к реализации (Go to Implementation)
+
+Как вернуться обратно, jumplist:
+
+- `Ctrl + o` - вернуться на предыдущую позицию
+- `Ctrl + i` - перейти вперед по списку переходов
