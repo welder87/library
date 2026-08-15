@@ -21,6 +21,23 @@ chrome://version
 chrome://gpu
 ```
 
+### Установка с github.
+
+```bash
+cd /tmp
+wget https://github.com/maintainer/tool_name/releases/download/vx.x.x/filename.tar.gz
+
+tar -xvf filename.tar.gz
+mkdir -p ~/.local/bin
+mv tool_name ~/.local/bin/
+chmod +x ~/.local/bin/tool_name
+
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+
+tool_name --version
+```
+
 ## Tools
 
 ### helix
@@ -143,11 +160,9 @@ sudo apt install ffmpeg
 
 - [Src](https://github.com/charmbracelet/glow)
 
-```bash
-go install github.com/charmbracelet/glow/v2@latest
-```
+Установка с github или snap.
 
-Snap версия проблемная, так как полностью в песочнице.
+Snap версия более старая.
 
 ```bash
 sudo snap install glow
@@ -190,20 +205,7 @@ usql --version
 - [Src](https://github.com/blopker/codebook)
 - [Docs](https://github.com/blopker/codebook)
 
-```bash
-cd /tmp
-wget https://github.com/blopker/codebook/releases/download/v0.3.43/codebook-lsp-x86_64-unknown-linux-musl.tar.gz
-
-tar -xvf codebook-lsp-x86_64-unknown-linux-musl.tar.gz
-mkdir -p ~/.local/bin
-mv codebook-lsp ~/.local/bin/
-chmod +x ~/.local/bin/codebook-lsp
-
-echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
-source ~/.bashrc
-
-codebook-lsp --version
-```
+Установка с github.
 
 Файл глобальной конфигурации.
 
@@ -228,17 +230,7 @@ https://github.com/nametake/golangci-lint-langserver
 - [Src](https://github.com/mhersson/mpls)
 - [Docs](https://github.com/mhersson/mpls)
 
-```bash
-cd /tmp
-https://github.com/mhersson/mpls/releases/download/v0.22.0/mpls_0.22.0_linux_amd64.tar.gz
-tar -xzf mpls_0.22.0_linux_amd64.tar.gz
-cp mpls ~/.local/bin/
-chmod +x ~/.local/bin/mpls
-
-echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc                            
-source ~/.bashrc
-mpls --version
-```
+Установка с github.
 
 #### markdown-oxide
 
