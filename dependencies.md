@@ -198,7 +198,45 @@ sudo mv /tmp/usql /usr/local/bin/
 usql --version
 ```
 
-## lsp
+## lsp, debuger, linter, formatter
+
+### python
+
+#### uv
+
+Это пакетный менеджер
+
+- [Docs](https://docs.astral.sh/uv/)
+- [Src](https://github.com/astral-sh/uv)
+
+Всё что устанавливается через `uv tool install` будет лежать в `~/.local/bin/*`
+
+#### basedpyright
+
+- [Docs](https://docs.basedpyright.com)
+- [Src](https://github.com/detachhead/basedpyright)
+
+```bash
+uv tool install basedpyright
+```
+
+#### ruff
+
+- [Docs](https://docs.astral.sh/ruff/)
+- [Src](https://github.com/astral-sh/ruff)
+
+```bash
+uv tool install ruff
+```
+
+#### debugpy
+
+- [Docs](https://github.com/microsoft/debugpy)
+- [Src](https://github.com/microsoft/debugpy)
+
+```bash
+uv tool install debugpy
+```
 
 ### codebook
 
