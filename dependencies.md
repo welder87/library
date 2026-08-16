@@ -284,7 +284,20 @@ chmod +x ~/.local/bin/marksman
 
 ### toml
 
+#### taplo
+
 - [Docs](https://taplo.tamasfe.dev)
 - [Src](https://github.com/tamasfe/taplo/)
 
 Установка с github.
+
+### javascript
+
+#### typescript-language-server
+
+- [Docs](https://github.com/typescript-language-server/typescript-language-server)
+- [Src](https://github.com/typescript-language-server/typescript-language-server)
+
+```bash
+npm install -g typescript-language-server typescript
+```
