@@ -281,3 +281,10 @@ https://oxide.md/ https://github.com/Feel-ix-343/markdown-oxide
 wget https://github.com/artempyanykh/marksman/releases/latest/download/marksman-linux-x64 -O ~/.local/bin/marksman
 chmod +x ~/.local/bin/marksman
 ```
+
+### toml
+
+- [Docs](https://taplo.tamasfe.dev)
+- [Src](https://github.com/tamasfe/taplo/)
+
+Установка с github.
