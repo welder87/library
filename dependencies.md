@@ -301,3 +301,14 @@ chmod +x ~/.local/bin/marksman
 ```bash
 npm install -g typescript-language-server typescript
 ```
+
+### yaml
+
+#### yaml-language-server
+
+- [Docs](https://github.com/redhat-developer/yaml-language-server)
+- [Src](https://github.com/redhat-developer/yaml-language-server)
+
+```bash
+npm install -g yaml-language-server
+```
