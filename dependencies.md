@@ -97,6 +97,12 @@ sudo systemctl enable --now keyd
 sudo apt install keyd
 ```
 
+### joplin
+
+```bash
+wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
+```
+
 ### httprunner
 
 - [Docs](https://christianhelle.com/httprunner/)
@@ -197,6 +203,7 @@ tar -xjf usql-0.21.4-linux-amd64.tar.bz2 -C /tmp
 sudo mv /tmp/usql /usr/local/bin/
 usql --version
 ```
+
 
 ## lsp, debuger, linter, formatter
 
@@ -311,4 +318,23 @@ npm install -g typescript-language-server typescript
 
 ```bash
 npm install -g yaml-language-server
+```
+
+## AI
+
+### ollama
+
+- [Docs](https://ollama.com)
+
+```bash
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
+### opencode
+
+- [Docs](https://opencode.ai)
+
+```bash
+curl -fsSL https://opencode.ai/install | bash
+
 ```
