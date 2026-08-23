@@ -40,6 +40,34 @@ tool_name --version
 
 ## Tools
 
+### Git
+
+#### lazygit
+
+- [Docs](https://github.com/jesseduffield/lazygit)
+- [Src](https://github.com/jesseduffield/lazygit)
+
+```bash
+sudo apt install lazygit
+```
+
+на _Ubuntu 25.04 "Plucky Puffin"_ и ранее:
+
+```bash
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | \grep -Po '"tag_name": *"v\K[^"]*')
+LAZYGIT_ARCH=$(uname -m | sed -e 's/aarch64/arm64/')
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/download/v${LAZYGIT_VERSION}/lazygit_${LAZYGIT_VERSION}_Linux_${LAZYGIT_ARCH}.tar.gz"
+tar xf lazygit.tar.gz lazygit
+sudo install lazygit -D -t /usr/local/bin/
+```
+
+#### mergiraf
+
+- [Docs](https://mergiraf.org)
+- [Src](https://codeberg.org/mergiraf/mergiraf)
+
+Установка с github.
+
 ### helix
 
 - [Docs1](https://helix-editor.com/)
@@ -204,7 +232,6 @@ sudo mv /tmp/usql /usr/local/bin/
 usql --version
 ```
 
-
 ## lsp, debuger, linter, formatter
 
 ### python
@@ -336,5 +363,4 @@ curl -fsSL https://ollama.com/install.sh | sh
 
 ```bash
 curl -fsSL https://opencode.ai/install | bash
-
 ```
