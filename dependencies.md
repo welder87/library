@@ -125,6 +125,22 @@ sudo systemctl enable --now keyd
 sudo apt install keyd
 ```
 
+### marktext
+
+- [Src](https://github.com/marktext/marktext)
+- [Docs](https://marktext.me/)
+
+```bash
+sudo snap install marktext
+```
+
+### mdcat
+
+- [Src](https://github.com/BIRSAx2/mdcat)
+- [Docs](https://github.com/BIRSAx2/mdcat)
+
+Установка через github.
+
 ### joplin
 
 ```bash
