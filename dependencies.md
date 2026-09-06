@@ -141,12 +141,6 @@ sudo snap install marktext
 
 Установка через github.
 
-### joplin
-
-```bash
-wget -O - https://raw.githubusercontent.com/laurent22/joplin/dev/Joplin_install_and_update.sh | bash
-```
-
 ### httprunner
 
 - [Docs](https://christianhelle.com/httprunner/)
@@ -227,10 +221,6 @@ sudo snap install glow
 ```bash
 sudo dpkg -i file.deb
 ```
-
-### 
-
-### mergiraf
 
 ### dprint
 
