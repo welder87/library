@@ -38,7 +38,61 @@ source ~/.bashrc
 tool_name --version
 ```
 
+## Flatpak
+
+```bash
+sudo apt install flatpak
+
+# если нужно
+sudo apt install gnome-software-plugin-flatpak
+
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+reboot
+```
+
 ## Tools
+
+### Terminal
+
+#### Konsole
+
+Установка через flatpak:
+
+```bash
+flatpak install flathub org.kde.konsole
+```
+
+Запуск
+
+```bash
+flatpak run org.kde.konsole
+```
+
+или старый вариант через apt.
+
+```bash
+sudo apt install --no-install-recommends konsole
+```
+
+Проброс доступов к директориям конфигов.
+
+```
+mkdir -p ~/.local/share/flatpak/overrides/
+hx ~/.local/share/flatpak/overrides/org.kde.konsole
+```
+
+#### alacritty
+
+- [Docs](https://alacritty.org/)
+- [Src](https://github.com/alacritty/alacritty)
+
+Установить для пользователя.
+
+```bash
+gsettings set org.gnome.desktop.default-applications.terminal exec alacritty
+gsettings set org.gnome.desktop.default-applications.terminal exec-arg ''
+```
 
 ### Git
 
