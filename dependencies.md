@@ -55,6 +55,12 @@ reboot
 
 ### Terminal
 
+#### Gnome Terminal
+
+##### Themes
+
+- [catppuccin](https://github.com/catppuccin/gnome-terminal)
+
 #### Konsole
 
 Установка через flatpak:
@@ -423,4 +429,19 @@ curl -fsSL https://ollama.com/install.sh | sh
 
 ```bash
 curl -fsSL https://opencode.ai/install | bash
+```
+
+MCP
+
+codebase-memory-mcp
+
+- [Src](https://github.com/DeusData/codebase-memory-mcp)
+- [Docs](https://github.com/DeusData/codebase-memory-mcp)
+
+Установка через github.
+
+```bash
+codebase-memory-mcp cli index_repository --repo-path "abs_path" --name "name"
+
+codebase-memory-mcp cli check_index_coverage --project "name" --paths paths
 ```
