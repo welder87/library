@@ -62,3 +62,60 @@ func lookupSession(ctx context.Context, store SessionStore, t Token) (*Session, 
 	return s, nil
 }
 ```
+
+## Оборачивать каждую ошибку контекстом не нужно
+
+Оборачивание уместно на стыках, где теряется контекст. Внутри пакета оно лишь
+раздувает сообщения и аллокации.
+
+Популярный совет в Go звучит разумно.
+
+> Оборачивайте каждую ошибку, пока она всплывает по стеку вызовов, чтобы всегда
+> знать, откуда она пришла:
+
+```go
+func getUser(id string) (*User, error) {
+    u, err := db.QueryUser(id)
+    if err != nil {
+        return nil, fmt.Errorf("getUser: query failed: %w", err)
+    }
+    return u, nil
+}
+```
+
+В маленьком проекте это работает. Но в системе, где один запрос проходит через
+шесть сервисов, можно получить строки ошибок вот такого вида:
+
+```txt
+processPayment: validateAccount: fetchBalance: getUser: query failed: context deadline exceeded
+```
+
+Это не наблюдаемость, а стектрейс, переодетый в сообщение об ошибке. Здесь
+дублируется то, что структурированное логирование уже даёт (имя функции, файл,
+строку), и есть плата за аллокацию `fmt.Errorf` на каждом несчастливом пути.
+
+### Что делать вместо
+
+Оборачивать ошибки на границах доверия. Это вызов другого сервиса, слой базы
+данных или внешняя зависимость. Внутри одного пакета пусть ошибка летит как
+есть, а работу делает логгер:
+
+```go
+// На границе оборачивается
+func (s *PaymentService) Process(ctx context.Context, req *ProcessRequest) error {
+    if err := s.ledger.Debit(ctx, req.AccountID, req.Amount); err != nil {
+        return fmt.Errorf("debit account %s: %w", req.AccountID, err)
+    }
+    return nil
+}
+```
+
+```go
+// Внутри пакета просто возвращается
+func validate(req *ProcessRequest) error {
+    if req.Amount <= 0 {
+        return ErrInvalidAmount
+    }
+    return nil
+}
+```
